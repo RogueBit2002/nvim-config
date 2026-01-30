@@ -17,7 +17,7 @@
 				default = pancake.makeNeovimPackage { 
 					inherit pkgs;
 					luaConfig = ./init.lua;
-					label = "pancake-demo";
+					label = "lx";
 					plugins = [
 						pkgs.vimPlugins.lualine-nvim
 						pkgs.vimPlugins.plenary-nvim
