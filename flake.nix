@@ -6,9 +6,7 @@
 		pancake.url = "github:RogueBit2002/pancake.nvim";
 	};
 
-	outputs = { self, nixpkgs, pancake, ... }: let
-		
-	in {
+	outputs = { self, nixpkgs, pancake, ... }: {
 		
 		packages = builtins.foldl' (all: system: all // {
 			${system} = let
@@ -18,21 +16,34 @@
 					inherit pkgs;
 					luaConfig = ./init.lua;
 					label = "lx";
-					plugins = [
-						pkgs.vimPlugins.lualine-nvim
-						pkgs.vimPlugins.plenary-nvim
-						pkgs.vimPlugins.nui-nvim
-						pkgs.vimPlugins.nvim-web-devicons
-						pkgs.vimPlugins.neo-tree-nvim
-						pkgs.vimPlugins.nvim-lspconfig
-						pkgs.vimPlugins.sonokai
-						pkgs.vimPlugins.telescope-nvim
+					plugins = with pkgs; [
+						vimPlugins.lualine-nvim
+						vimPlugins.plenary-nvim
+						vimPlugins.nui-nvim
+						vimPlugins.nvim-web-devicons
+						vimPlugins.neo-tree-nvim
+						vimPlugins.nvim-lspconfig
+						vimPlugins.sonokai
+						vimPlugins.everforest
+						vimPlugins.telescope-nvim
 					];
 					nativeDependencies = with pkgs; [ 
+						# LSPs
 						typescript-language-server
 						lua-language-server
+						zls
+						nil
 						ripgrep
 					];
+				};
+			};
+		}) {} nixpkgs.lib.platforms.all;
+
+		apps = builtins.foldl' (all: system: all // {
+			${system} = {
+				default = {
+					type = "app";
+					program = self.packages.${system}.default + /bin/nvim;
 				};
 			};
 		}) {} nixpkgs.lib.platforms.all;

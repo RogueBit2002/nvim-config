@@ -17,7 +17,8 @@ require("lualine").setup()
 
 vim.lsp.enable "lua_ls"
 vim.lsp.enable "ts_ls"
-vim.lsp.enable "zlm"
+vim.lsp.enable "zls"
+vim.lsp.enable "nil_ls"
 
 vim.o.completeopt = "preview,fuzzy,menuone,noinsert,noselect"
 
@@ -54,6 +55,7 @@ vim.keymap.set('n', '<leader>fg', telescope.live_grep, { desc = 'Telescope live 
 vim.keymap.set('n', '<leader>fb', telescope.buffers, { desc = 'Telescope buffers' })
 vim.keymap.set('n', '<leader>fh', telescope.help_tags, { desc = 'Telescope help tags' })
 
+vim.g.sonokai_better_performance = 1
 vim.g.sonokai_enable_italic = true
 vim.g.sonokai_transparent_background = 1
 
