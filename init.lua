@@ -55,13 +55,13 @@ vim.keymap.set('n', '<leader>fg', telescope.live_grep, { desc = 'Telescope live 
 vim.keymap.set('n', '<leader>fb', telescope.buffers, { desc = 'Telescope buffers' })
 vim.keymap.set('n', '<leader>fh', telescope.help_tags, { desc = 'Telescope help tags' })
 
+require("render-markdown").setup({})
+
 vim.g.sonokai_better_performance = 1
 vim.g.sonokai_enable_italic = true
 vim.g.sonokai_transparent_background = 1
 
-
-
-
+--[[
 local c = require('vscode.colors').get_colors()
 require('vscode').setup({
     -- Alternatively set style in setup
@@ -97,6 +97,7 @@ require('vscode').setup({
         Cursor = { fg=c.vscDarkBlue, bg=c.vscLightGreen, bold=true },
     }
 })
+vim.cmd.colorscheme "vscode"
+]]
 
---vim.cmd.colorscheme "vscode"
 vim.cmd.colorscheme "sonokai"

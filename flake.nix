@@ -26,7 +26,7 @@
 						vimPlugins.sonokai
 						vimPlugins.everforest
 						vimPlugins.telescope-nvim
-						# vimPlugins.gruvBox
+						vimPlugins.render-markdown-nvim	
 						vimPlugins.vscode-nvim
 					] ++ [
 						# (builtins.fetchGit { url = "https://https://github.com/kubemancer/firewatch.nvim"; rev = "a7a4a32cb1af942c12f69e41100c9298b5dd12ac";})
