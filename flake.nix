@@ -28,6 +28,7 @@
 						vimPlugins.telescope-nvim
 						vimPlugins.render-markdown-nvim	
 						vimPlugins.vscode-nvim
+						vimPlugins.bufferline-nvim
 					] ++ [
 						# (builtins.fetchGit { url = "https://https://github.com/kubemancer/firewatch.nvim"; rev = "a7a4a32cb1af942c12f69e41100c9298b5dd12ac";})
 					];

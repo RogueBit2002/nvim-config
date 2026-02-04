@@ -14,6 +14,22 @@ vim.o.termguicolors = true
 vim.g.mapleader = " "
 
 require("lualine").setup()
+require("bufferline").setup({
+	options = {
+		offsets = {
+			{
+				filetype = "neo-tree",
+				text = "File Explorer",
+				text_align = "center",
+				separator = true
+			}
+		}
+	}
+})
+
+vim.keymap.set('n', '<C+[>', ':BufferLineCyclePrev<CR>', {})
+vim.keymap.set('n', '<C+]>', ':BufferLineCycleNext<CR>', {})
+
 
 vim.lsp.enable "lua_ls"
 vim.lsp.enable "ts_ls"
