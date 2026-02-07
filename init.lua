@@ -35,6 +35,7 @@ vim.lsp.enable "lua_ls"
 vim.lsp.enable "ts_ls"
 vim.lsp.enable "zls"
 vim.lsp.enable "nil_ls"
+vim.lsp.enable "tofu_ls"
 
 vim.o.completeopt = "preview,fuzzy,menuone,noinsert,noselect"
 

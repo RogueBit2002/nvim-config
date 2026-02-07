@@ -38,6 +38,7 @@
 						lua-language-server
 						zls
 						nil
+						tofu-ls
 						ripgrep
 					];
 				};
